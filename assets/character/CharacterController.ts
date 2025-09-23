@@ -2,10 +2,10 @@ import { _decorator, Component, input, Input, EventKeyboard, KeyCode, Vec2 } fro
 import { RigidBody2D } from "cc";
 const { ccclass, property } = _decorator;
 
-@ccclass("NoraPhysicsController")
-export class NoraPhysicsController extends Component {
+@ccclass("CharacterController")
+export class CharacterController extends Component {
   @property({ tooltip: "Pixels per second" })
-  speed = 180;
+  speed = 32;
 
   private dir = new Vec2(0, 0);
   private rb!: RigidBody2D;
@@ -39,7 +39,6 @@ export class NoraPhysicsController extends Component {
   }
 
   update() {
-    // Normalize so diagonals aren’t faster
     const { x, y } = this.dir;
     if (x !== 0 || y !== 0) {
       const len = Math.hypot(x, y) || 1;

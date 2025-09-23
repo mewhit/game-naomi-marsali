@@ -9,20 +9,23 @@
         "assets/tiles/wooden_floor"
     ],
     "fileStates": {
+        "assets/tiles/bathroom-floor_64.tsx": {
+            "scaleInEditor": 1
+        },
         "assets/tiles/house.tmx": {
-            "scale": 1.5,
+            "scale": 0.75,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 960,
-                "y": 857.3333333333334
+                "x": 1444,
+                "y": 824
             }
         },
         "assets/tiles/house2.tmx": {
-            "scale": 1.5,
-            "selectedLayer": 0,
+            "scale": 0.5,
+            "selectedLayer": 1,
             "viewCenter": {
-                "x": 786,
-                "y": 585
+                "x": 1460,
+                "y": 444
             }
         },
         "assets/tiles/plant.tsx": {
@@ -34,6 +37,18 @@
             "scaleInEditor": 1
         },
         "assets/tiles/plant_64.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "assets/tiles/wall.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "assets/tiles/wall_x.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "assets/tiles/wall_y.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
@@ -68,16 +83,18 @@
     ],
     "project": "floor.tiled-project",
     "recentFiles": [
-        "assets/tiles/house2.tmx",
         "assets/tiles/plant_64.tsx",
         "assets/tiles/house.tmx",
+        "assets/tiles/bathroom-floor_64.tsx",
+        "assets/tiles/wall.tsx",
+        "assets/tiles/wall_y.tsx",
+        "assets/tiles/wall_x.tsx",
+        "assets/tiles/house2.tmx",
         "assets/tiles/wooden-floor_64.tsx",
         "assets/tiles/plant/plant_64.tsx",
         "assets/tiles/wooden-floor/wooden-floor_64.tsx",
         "assets/tiles/wooden_floor/wooden-floor_64.tsx",
-        "assets/tiles/wooden-floor.tsx",
-        "assets/tiles/woodenv2.tsx",
-        "assets/tiles/plant.tsx"
+        "assets/tiles/wooden-floor.tsx"
     ],
     "tileset.lastUsedFilter": "Tiled tileset files (*.tsx *.xml)",
     "tileset.lastUsedFormat": "tsx",
