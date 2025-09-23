@@ -1,50 +1,51 @@
-import { _decorator, Component, input, Input, EventKeyboard, KeyCode, Vec3 } from 'cc';
+import { _decorator, Component, input, Input, EventKeyboard, KeyCode, Vec2 } from "cc";
+import { RigidBody2D } from "cc";
 const { ccclass, property } = _decorator;
 
-@ccclass('NaraController')
-export class NaraController extends Component {
-  @property
-  speed = 2000; // pixels per second
+@ccclass("NoraPhysicsController")
+export class NoraPhysicsController extends Component {
+  @property({ tooltip: "Pixels per second" })
+  speed = 180;
 
-  private dir = new Vec3();
+  private dir = new Vec2(0, 0);
+  private rb!: RigidBody2D;
 
   onLoad() {
-    input.on(Input.EventType.KEY_DOWN, this.onKeyDown, this);
-    input.on(Input.EventType.KEY_UP, this.onKeyUp, this);
+    this.rb = this.getComponent(RigidBody2D)!;
+    input.on(Input.EventType.KEY_DOWN, this.onKey, this);
+    input.on(Input.EventType.KEY_UP, this.onKey, this);
   }
-
   onDestroy() {
-    input.off(Input.EventType.KEY_DOWN, this.onKeyDown, this);
-    input.off(Input.EventType.KEY_UP, this.onKeyUp, this);
+    input.off(Input.EventType.KEY_DOWN, this.onKey, this);
+    input.off(Input.EventType.KEY_UP, this.onKey, this);
   }
 
-  private onKeyDown(event: EventKeyboard) {
-    switch (event.keyCode) {
-      case KeyCode.KEY_W: this.dir.y = 1; break;
-      case KeyCode.KEY_S: this.dir.y = -1; break;
-      case KeyCode.KEY_A: this.dir.x = -1; break;
-      case KeyCode.KEY_D: this.dir.x = 1; break;
-    }
-  }
-
-  private onKeyUp(event: EventKeyboard) {
-    switch (event.keyCode) {
+  private onKey(e: EventKeyboard) {
+    const v = e.type === Input.EventType.KEY_DOWN ? 1 : 0;
+    switch (e.keyCode) {
       case KeyCode.KEY_W:
-      case KeyCode.KEY_S: this.dir.y = 0; break;
+        this.dir.y = v;
+        break;
+      case KeyCode.KEY_S:
+        this.dir.y = -v;
+        break;
       case KeyCode.KEY_A:
-      case KeyCode.KEY_D: this.dir.x = 0; break;
+        this.dir.x = -v;
+        break;
+      case KeyCode.KEY_D:
+        this.dir.x = v;
+        break;
     }
   }
 
-  update(dt: number) {
-    if (this.dir.lengthSqr() === 0) return;
-
-    const move = new Vec3(
-      this.dir.x * this.speed * dt,
-      this.dir.y * this.speed * dt,
-      0
-    );
-
-    this.node.setPosition(this.node.position.clone().add(move));
+  update() {
+    // Normalize so diagonals aren’t faster
+    const { x, y } = this.dir;
+    if (x !== 0 || y !== 0) {
+      const len = Math.hypot(x, y) || 1;
+      this.rb.linearVelocity = new Vec2((x / len) * this.speed, (y / len) * this.speed);
+    } else {
+      this.rb.linearVelocity = new Vec2(0, 0);
+    }
   }
 }
