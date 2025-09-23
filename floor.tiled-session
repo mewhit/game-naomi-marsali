@@ -16,16 +16,16 @@
             "scale": 0.75,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 1444,
-                "y": 824
+                "x": 1230.6666666666665,
+                "y": 1120.6666666666667
             }
         },
         "assets/tiles/house2.tmx": {
-            "scale": 0.5,
+            "scale": 1.5,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 1460,
-                "y": 444
+                "x": 1731.9999999999998,
+                "y": 753.3333333333333
             }
         },
         "assets/tiles/plant.tsx": {
@@ -41,6 +41,22 @@
             "scaleInEditor": 1
         },
         "assets/tiles/wall.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "assets/tiles/wall_bottom.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "assets/tiles/wall_left.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "assets/tiles/wall_right.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "assets/tiles/wall_top.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
@@ -74,7 +90,7 @@
         }
     },
     "last.externalTilesetPath": "C:/Users/Mike/Nara/assets/tiles",
-    "last.imagePath": "C:/Users/Mike/Nara/assets/tiles",
+    "last.imagePath": "C:/dev/game-naomi-marsali/assets/tiles",
     "map.lastUsedFormat": "tmx",
     "openFiles": [
         "assets/tiles/house2.tmx",
@@ -83,18 +99,18 @@
     ],
     "project": "floor.tiled-project",
     "recentFiles": [
-        "assets/tiles/plant_64.tsx",
+        "assets/tiles/house2.tmx",
+        "assets/tiles/wall_top.tsx",
+        "assets/tiles/wall_left.tsx",
+        "assets/tiles/wall_bottom.tsx",
+        "assets/tiles/wall_right.tsx",
         "assets/tiles/house.tmx",
+        "assets/tiles/plant_64.tsx",
         "assets/tiles/bathroom-floor_64.tsx",
         "assets/tiles/wall.tsx",
         "assets/tiles/wall_y.tsx",
         "assets/tiles/wall_x.tsx",
-        "assets/tiles/house2.tmx",
-        "assets/tiles/wooden-floor_64.tsx",
-        "assets/tiles/plant/plant_64.tsx",
-        "assets/tiles/wooden-floor/wooden-floor_64.tsx",
-        "assets/tiles/wooden_floor/wooden-floor_64.tsx",
-        "assets/tiles/wooden-floor.tsx"
+        "assets/tiles/wooden-floor_64.tsx"
     ],
     "tileset.lastUsedFilter": "Tiled tileset files (*.tsx *.xml)",
     "tileset.lastUsedFormat": "tsx",
