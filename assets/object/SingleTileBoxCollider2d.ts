@@ -5,11 +5,8 @@ const { ccclass, property } = _decorator;
  * Creates individual static BoxCollider2D colliders for each occupied tile in a target layer.
  * Assumes tile (0,0) is top-left in the Tiled map; converts to Cocos coordinates (y up).
  */
-@ccclass("PlantBoxCollider2d")
-export class PlantBoxCollider2d extends Component {
-  @property({ tooltip: "Optional parent container name (will be recreated each build). Leave blank to attach directly." })
-  containerName: string = "PlantTileColliders";
-
+@ccclass("SingleTileBoxCollider2d")
+export class SingleTileBoxCollider2d extends Component {
   @property({ tooltip: "Log debug info" })
   debug: boolean = true;
 
@@ -18,19 +15,15 @@ export class PlantBoxCollider2d extends Component {
   }
 
   public build() {
-    const map = this.getComponent(TiledMap);
-    if (!map) {
-      console.warn("[PlantBoxCollider2d] No TiledMap on node.");
-      return;
-    }
-    const layer = map.getLayer("plants") as TiledLayer | null;
+    const layer = this.getComponent(TiledLayer);
+
     if (!layer) {
-      console.warn(`[PlantBoxCollider2d] Layer 'plants' not found.`);
+      console.warn(`[SingleTileBoxCollider2d] Layer 'plants' not found.`);
       return;
     }
 
-    const tileSize = map.getTileSize(); // Size (pixels)
     const layerSize = layer.getLayerSize(); // in tiles
+    const tileSize = layer.getMapTileSize(); // Size (pixels)
     let tiles = 0;
     let colliders = 0;
 
@@ -52,14 +45,14 @@ export class PlantBoxCollider2d extends Component {
 
         layer.node.addChild(p);
         const col = p.addComponent(BoxCollider2D);
-        col.size = new Size(w, h);
+        col.size = new Size(w - 8, h - 8);
         col.apply();
         colliders++;
         if (this.debug && colliders <= 10) {
-          console.log(`[PlantBoxCollider2d] Collider (${x},${y}) center=(${xCenter},${yCenter}) size=(${w},${h})`);
+          console.log(`[SingleTileBoxCollider2d] Collider (${x},${y}) center=(${xCenter},${yCenter}) size=(${w},${h})`);
         }
       }
     }
-    if (this.debug) console.log(`[PlantBoxCollider2d] Done. tilesWithGid=${tiles} colliders=${colliders}`);
+    if (this.debug) console.log(`[SingleTileBoxCollider2d] Done. tilesWithGid=${tiles} colliders=${colliders}`);
   }
 }

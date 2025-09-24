@@ -16,16 +16,16 @@
             "scale": 0.75,
             "selectedLayer": 1,
             "viewCenter": {
-                "x": 1230.6666666666665,
-                "y": 1120.6666666666667
+                "x": 1444,
+                "y": 1184
             }
         },
         "assets/tiles/house2.tmx": {
-            "scale": 1.5,
-            "selectedLayer": 1,
+            "scale": 0.5,
+            "selectedLayer": 4,
             "viewCenter": {
-                "x": 1731.9999999999998,
-                "y": 753.3333333333333
+                "x": 1452,
+                "y": 442
             }
         },
         "assets/tiles/plant.tsx": {
@@ -40,10 +40,10 @@
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
-        "assets/tiles/wall-corner-top-right.tsx": {
+        "assets/tiles/sidewall-concrete.tsx": {
             "scaleInEditor": 1
         },
-        "assets/tiles/wall-y.tsx": {
+        "assets/tiles/wall-x.tsx": {
             "scaleInEditor": 1
         },
         "assets/tiles/wall.tsx": {
@@ -105,23 +105,23 @@
     ],
     "project": "floor.tiled-project",
     "recentFiles": [
-        "assets/tiles/wall-y.tsx",
-        "assets/tiles/wall-corner-top-right.tsx",
-        "assets/tiles/house2.tmx",
-        "assets/tiles/wall_top.tsx",
+        "assets/tiles/wall-x.tsx",
+        "assets/tiles/sidewall-concrete.tsx",
         "assets/tiles/wall_left.tsx",
-        "assets/tiles/wall_bottom.tsx",
         "assets/tiles/wall_right.tsx",
-        "assets/tiles/house.tmx",
+        "assets/tiles/wall_bottom.tsx",
+        "assets/tiles/wall_top.tsx",
+        "assets/tiles/wall_y.tsx",
+        "assets/tiles/house2.tmx",
+        "assets/tiles/wall_x.tsx",
         "assets/tiles/plant_64.tsx",
-        "assets/tiles/bathroom-floor_64.tsx",
-        "assets/tiles/wall.tsx",
-        "assets/tiles/wall_y.tsx"
+        "assets/tiles/house.tmx",
+        "assets/tiles/bathroom-floor_64.tsx"
     ],
     "tileset.lastUsedFilter": "Tiled tileset files (*.tsx *.xml)",
     "tileset.lastUsedFormat": "tsx",
     "tileset.tileSize": {
-        "height": 64,
-        "width": 64
+        "height": 192,
+        "width": 128
     }
 }

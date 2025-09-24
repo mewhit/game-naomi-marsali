@@ -1,19 +1,11 @@
-import {
-  _decorator,
-  Component,
-  input,
-  Input,
-  EventKeyboard,
-  KeyCode,
-  Vec2,
-} from "cc";
+import { _decorator, Component, input, Input, EventKeyboard, KeyCode, Vec2 } from "cc";
 import { RigidBody2D } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("CharacterController")
 export class CharacterController extends Component {
   @property({ tooltip: "Pixels per second" })
-  speed = 32;
+  speed: number;
   @property({ tooltip: "Enable reading Web Gamepad API (left stick/D-pad)." })
   enableGamepad = true;
   @property({ tooltip: "Analog stick deadzone (0..1)." })
@@ -72,10 +64,7 @@ export class CharacterController extends Component {
     const { x, y } = dir;
     if (x !== 0 || y !== 0) {
       const len = Math.hypot(x, y) || 1;
-      this.rb.linearVelocity = new Vec2(
-        (x / len) * this.speed,
-        (y / len) * this.speed
-      );
+      this.rb.linearVelocity = new Vec2((x / len) * this.speed, (y / len) * this.speed);
     } else {
       this.rb.linearVelocity = new Vec2(0, 0);
     }
