@@ -40,6 +40,12 @@
             "scaleInDock": 1,
             "scaleInEditor": 1
         },
+        "assets/tiles/wall-corner-top-right.tsx": {
+            "scaleInEditor": 1
+        },
+        "assets/tiles/wall-y.tsx": {
+            "scaleInEditor": 1
+        },
         "assets/tiles/wall.tsx": {
             "scaleInDock": 1,
             "scaleInEditor": 1
@@ -99,6 +105,8 @@
     ],
     "project": "floor.tiled-project",
     "recentFiles": [
+        "assets/tiles/wall-y.tsx",
+        "assets/tiles/wall-corner-top-right.tsx",
         "assets/tiles/house2.tmx",
         "assets/tiles/wall_top.tsx",
         "assets/tiles/wall_left.tsx",
@@ -108,9 +116,7 @@
         "assets/tiles/plant_64.tsx",
         "assets/tiles/bathroom-floor_64.tsx",
         "assets/tiles/wall.tsx",
-        "assets/tiles/wall_y.tsx",
-        "assets/tiles/wall_x.tsx",
-        "assets/tiles/wooden-floor_64.tsx"
+        "assets/tiles/wall_y.tsx"
     ],
     "tileset.lastUsedFilter": "Tiled tileset files (*.tsx *.xml)",
     "tileset.lastUsedFormat": "tsx",
