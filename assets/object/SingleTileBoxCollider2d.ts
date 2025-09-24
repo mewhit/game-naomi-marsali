@@ -48,9 +48,6 @@ export class SingleTileBoxCollider2d extends Component {
         col.size = new Size(w - 8, h - 8);
         col.apply();
         colliders++;
-        if (this.debug && colliders <= 10) {
-          console.log(`[SingleTileBoxCollider2d] Collider (${x},${y}) center=(${xCenter},${yCenter}) size=(${w},${h})`);
-        }
       }
     }
     if (this.debug) console.log(`[SingleTileBoxCollider2d] Done. tilesWithGid=${tiles} colliders=${colliders}`);

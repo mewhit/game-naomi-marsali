@@ -5,11 +5,14 @@ const { ccclass } = _decorator;
 @ccclass("DebugPhysics2D")
 export class DebugPhysics2D extends Component {
   onLoad() {
+    console.log("DebugPhysics2d onLoad");
+
     // Turn on shapes/AABB/joints outlines
     PhysicsSystem2D.instance.debugDrawFlags = EPhysics2DDrawFlags.Shape | EPhysics2DDrawFlags.Aabb | EPhysics2DDrawFlags.Joint;
   }
 
   start() {
+    console.log("[Physics2D Debug] flags =", PhysicsSystem2D.instance.debugDrawFlags);
     // Optional: toggle with F2 at runtime
     input.on(Input.EventType.KEY_DOWN, (e: EventKeyboard) => {
       if (e.keyCode === KeyCode.F2) {
